@@ -1,11 +1,17 @@
+interface ObjectIdName {
+    id:string;
+    name:string;
+}
+
 export interface SourceObject {
-    id: string;
-    name: string;
+    author: string;
+    content: string;
     description: string;
-    url: string;
-    category: string;
-    language: string;
-    country: string;
+    publishedAt: string;
+    source: ObjectIdName;
+    title:string;
+    url:string;
+    urlToImage:string;
 }
 
 export enum Status {
