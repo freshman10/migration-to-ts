@@ -1,14 +1,14 @@
 import './news.css';
-import {SourceObject} from '../../../types/types'
+import {NewsObject} from '../../../types/types'
 
 class News {
-    public draw(data: SourceObject[]) {
-        const news: SourceObject[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+    public draw(data: NewsObject[]) {
+        const news: NewsObject[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement | null = document.querySelector('#newsItemTemp');
 
-        news.forEach((item: SourceObject, idx: number) => {
+        news.forEach((item: NewsObject, idx: number) => {
             if (newsItemTemp) {
                 const newsClone = newsItemTemp.content.cloneNode(true) as DocumentFragment;
 
