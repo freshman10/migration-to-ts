@@ -54,7 +54,7 @@ export interface ApiKeyObject {
 
 export interface GetRespObject {
     endpoint: string;
-    options: OptionsObj;
+    options?: OptionsObj;
 }
 
 export interface OptionsObj {
