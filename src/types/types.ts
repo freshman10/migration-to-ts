@@ -1,6 +1,6 @@
 interface ObjectIdName {
-    id:string;
-    name:string;
+    id: string;
+    name: string;
 }
 
 export interface NewsObject {
@@ -9,9 +9,9 @@ export interface NewsObject {
     description: string;
     publishedAt: string;
     source: ObjectIdName;
-    title:string;
-    url:string;
-    urlToImage:string;
+    title: string;
+    url: string;
+    urlToImage: string;
 }
 
 export interface SourceObject {
@@ -25,20 +25,38 @@ export interface SourceObject {
 }
 
 export enum Status {
-    ok = "ok",
-    error = "error",
+    ok = 'ok',
+    error = 'error',
 }
 
 export interface NewsClass {
-    draw(data: NewsObject[]):void;
+    draw(data: NewsObject[]): void;
 }
 
 export interface SourcesClass {
-    draw(data: SourceObject[]):void;
+    draw(data: SourceObject[]): void;
 }
 
 export interface ArticlesObject {
     status: Status;
-    totalResults:3503;
+    totalResults: 3503;
     articles: NewsObject[];
+}
+
+export interface SourcesData {
+    status: Status;
+    sources: SourceObject[];
+}
+
+export interface ApiKeyObject {
+    apiKey?: string;
+}
+
+export interface GetRespObject {
+    endpoint: string;
+    options: OptionsObj;
+}
+
+export interface OptionsObj {
+    [prop: string]: string;
 }

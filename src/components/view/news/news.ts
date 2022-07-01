@@ -1,5 +1,5 @@
 import './news.css';
-import {NewsObject} from '../../../types/types'
+import { NewsObject } from '../../../types/types';
 
 class News {
     public draw(data: NewsObject[]) {
@@ -15,47 +15,45 @@ class News {
                 if (idx % 2) newsClone.querySelector('.news__item')?.classList.add('alt');
 
                 const metaPhoto: HTMLTemplateElement | null = newsClone.querySelector('.news__meta-photo');
-                if ( metaPhoto) {
-                    metaPhoto.style.backgroundImage  = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+                if (metaPhoto) {
+                    metaPhoto.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
                 }
 
                 const metaAuthor: HTMLTemplateElement | null = newsClone.querySelector('.news__meta-author');
                 if (metaAuthor) {
                     metaAuthor.textContent = item.author || item.source.name;
                 }
-                
+
                 const metaDate: HTMLTemplateElement | null = newsClone.querySelector('.news__meta-date');
                 if (metaDate) {
-                    metaDate.textContent = item.publishedAt
-                    .slice(0, 10)
-                    .split('-')
-                    .reverse()
-                    .join('-');
+                    metaDate.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
                 }
-                
-                const descriptionTitle: HTMLTemplateElement | null = newsClone.querySelector('.news__description-title');
+
+                const descriptionTitle: HTMLTemplateElement | null = newsClone.querySelector(
+                    '.news__description-title'
+                );
                 if (descriptionTitle) {
                     descriptionTitle.textContent = item.title;
                 }
-                
-                const descriptionSource: HTMLTemplateElement | null = newsClone.querySelector('.news__description-source');
+
+                const descriptionSource: HTMLTemplateElement | null = newsClone.querySelector(
+                    '.news__description-source'
+                );
                 if (descriptionSource) {
                     descriptionSource.textContent = item.source.name;
                 }
-                
-                const descriptionContent: HTMLTemplateElement | null = newsClone.querySelector('.news__description-content');
+
+                const descriptionContent: HTMLTemplateElement | null = newsClone.querySelector(
+                    '.news__description-content'
+                );
                 if (descriptionContent) {
                     descriptionContent.textContent = item.description;
                 }
-                
-                const readMore: HTMLTemplateElement | null = newsClone.querySelector('.news__read-more a');
-                if (readMore) {
-                    readMore.setAttribute('href', item.url);
-                }
-                
+
+                newsClone.querySelector('.news__read-more a')?.setAttribute('href', item.url);
+
                 fragment.append(newsClone);
             }
-
         });
 
         const newsElement: HTMLTemplateElement | null = document.querySelector('.news');
@@ -63,7 +61,6 @@ class News {
             newsElement.innerHTML = '';
             newsElement.appendChild(fragment);
         }
-        
     }
 }
 
