@@ -1,4 +1,4 @@
-type ObjectIdName = Pick<SourceObject, "id" | "name">
+type ObjectIdName = Pick<SourceObject, 'id' | 'name'>;
 
 export type UnionHTMLAndNull = HTMLTemplateElement | null;
 
@@ -51,7 +51,7 @@ interface ApiKeyObjectUsual {
     apiKey: string;
 }
 
-export type ApiKeyObject = Partial<ApiKeyObjectUsual>
+export type ApiKeyObject = Partial<ApiKeyObjectUsual>;
 
 export interface GetRespObject {
     endpoint: string;
@@ -72,4 +72,5 @@ export interface AppViewInterface {
     sources: SourcesClass;
     drawNews(data: Readonly<ArticlesObject>): void;
     drawSources(data: Readonly<SourcesData>): void;
+    drawCategories(data: Readonly<SourcesData>): void;
 }

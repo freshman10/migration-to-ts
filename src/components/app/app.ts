@@ -16,7 +16,12 @@ class App {
             ?.addEventListener('click', (e) =>
                 this.controller.getNews(e as PointerEvent, (data: ArticlesObject) => this.view.drawNews(data))
             );
-        this.controller.getSources((data: SourcesData) => this.view.drawSources(data));
+        this.controller.getSources((data: SourcesData) => {
+            this.view.drawCategories(data);
+            this.view.drawSources(data);
+            document?.querySelector('.category')?.addEventListener('change', () => this.view.drawSources(data));
+            document?.querySelector('.country')?.addEventListener('change', () => this.view.drawSources(data));
+        });
     }
 }
 
