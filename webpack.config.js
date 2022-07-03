@@ -3,6 +3,8 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
@@ -16,6 +18,20 @@ const baseConfig = {
             { 
                 test: /\.ts$/i, use: 'ts-loader' 
             },
+            {
+                test: /\.html$/i,
+                use: ["html-loader"],
+            },
+            {
+                test: /\.(?:|gif|png|jpg|svg)$/,
+                type: 'asset/resource',
+                generator: {
+                  filename: () => {
+                    return isDev ? 'assets/img/[name][ext]' : 'img/[name].[contenthash][ext]';
+                  }
+                }
+              },
+
         ],
     },
     resolve: {
@@ -24,6 +40,7 @@ const baseConfig = {
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, '../dist'),
+     
     },
     plugins: [
         new HtmlWebpackPlugin({

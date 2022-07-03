@@ -24,6 +24,10 @@
     color: #70d6ff;
     transition: 0.25s;
     cursor: pointer;
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
 }
 
 .source__item:hover,

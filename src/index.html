@@ -12,15 +12,23 @@
         </header>
         <main>
             <div class="container">
-                <select class="category dropdown"></select>
-                <select class="country dropdown"></select>
+                <div class="wrapper">
+                    <label>Choose a topic:</label>
+                    <select class="category dropdown"></select>
+                </div>
+                <div class="wrapper">
+                    <label>Choose a language:</label>
+                    <select class="country capitalize dropdown "></select>
+                </div>
             </div>
             <div class="sources buttons"></div>
             <div class="news"></div>
         </main>
         <footer>
+            <a class="rsschool" href="https://rs.school/js/"><img class="rsschool-img" src="assets/img/rs_school.png" alt="rsschool logo"></a>
+            <a class="github" href="https://github.com/freshman10"><img class="github-img" src="./assets/img/github.png" alt="github logo logo"></a>
             <p class="copyright">
-                Copyright <a href="https://newsapi.org">NewsAPI</a>
+                Copyright 2022 <a href="https://newsapi.org">NewsAPI</a>
             </p>
         </footer>
 
@@ -50,7 +58,5 @@
             </div>
         </template>
         
-
-        <script src="./index.js"></script>
     </body>
 </html>
