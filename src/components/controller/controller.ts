@@ -1,13 +1,9 @@
 import AppLoader from './appLoader';
+import { ENDPOINTS } from '../../constants/endpoints';
 
 class AppController extends AppLoader {
     public getSources<Data>(callback: (data: Readonly<Data>) => void): void {
-        super.getResponse(
-            {
-                endpoint: 'sources',
-            },
-            callback
-        );
+        super.getResponse(ENDPOINTS, callback);
     }
 
     public getNews<Data>(e: PointerEvent, callback: (data: Readonly<Data>) => void): void {
