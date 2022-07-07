@@ -2,7 +2,7 @@ import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
     public getSources<Data>(callback: (data: Readonly<Data>) => void): void {
-        super.getResp(
+        super.getResponse(
             {
                 endpoint: 'sources',
             },
@@ -19,7 +19,7 @@ class AppController extends AppLoader {
                 const sourceId = target.getAttribute('data-source-id');
                 if (sourceId && newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
-                    super.getResp(
+                    super.getResponse(
                         {
                             endpoint: 'everything',
                             options: {

@@ -8,7 +8,7 @@ class Loader {
         this.options = options;
     }
 
-    public getResp<Data>(
+    public getResponse<Data>(
         { endpoint, options = {} }: GetRespObject,
         callback: (data: Readonly<Data>) => void = () => {
             console.error('No callback for GET response');
