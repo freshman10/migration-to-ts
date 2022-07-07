@@ -5,7 +5,7 @@ class Categories {
     private countries = new Set<string>();
     private categories = new Set<string>();
 
-    public draw(data: SourceObject[]) {
+    public draw(data: SourceObject[]): void {
         const category: UnionHTMLAndNull = document.querySelector('.category');
         const country: UnionHTMLAndNull = document.querySelector('.country');
         data.forEach((item: SourceObject) => {

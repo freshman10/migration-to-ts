@@ -2,7 +2,7 @@ import './sources.css';
 import { SourceObject, UnionHTMLAndNull } from '../../../types/types';
 
 class Sources {
-    public draw(data: SourceObject[]) {
+    public draw(data: SourceObject[]): void {
         const category: HTMLSelectElement | null = document.querySelector('.category');
         const country: HTMLSelectElement | null = document.querySelector('.country');
         const fragment: DocumentFragment = document.createDocumentFragment();

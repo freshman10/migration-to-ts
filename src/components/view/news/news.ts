@@ -2,7 +2,7 @@ import './news.css';
 import { NewsObject, UnionHTMLAndNull } from '../../../types/types';
 
 class News {
-    public draw(data: NewsObject[]) {
+    public draw(data: NewsObject[]): void {
         const news: NewsObject[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();

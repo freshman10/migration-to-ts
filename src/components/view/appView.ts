@@ -14,7 +14,7 @@ export class AppView {
         this.categories = new Categories();
     }
 
-    public drawNews(data: Readonly<ArticlesObject>) {
+    public drawNews(data: Readonly<ArticlesObject>): void {
         let values: NewsObject[] = [];
         if (data.articles) {
             values = data.articles;
@@ -22,7 +22,7 @@ export class AppView {
         this.news.draw(values);
     }
 
-    public drawSources(data: Readonly<SourcesData>) {
+    public drawSources(data: Readonly<SourcesData>): void {
         let values: SourceObject[] = [];
         if (data.sources) {
             values = data.sources;
@@ -30,7 +30,7 @@ export class AppView {
         this.sources.draw(values);
     }
 
-    public drawCategories(data: Readonly<SourcesData>) {
+    public drawCategories(data: Readonly<SourcesData>): void {
         let values: SourceObject[] = [];
         if (data.sources) {
             values = data.sources;

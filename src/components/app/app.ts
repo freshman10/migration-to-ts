@@ -10,7 +10,7 @@ class App {
         this.view = new AppView();
     }
 
-    public start() {
+    public start(): void {
         document
             ?.querySelector('.sources')
             ?.addEventListener('click', (e) =>
