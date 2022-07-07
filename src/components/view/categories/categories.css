@@ -1,9 +1,9 @@
 .dropdown {
+    padding: 10px 25px;
+    border: 2px solid #3fcc59;
+    background-color: black;
     font-size: 18px;
     color:#69db7e;
-    background-color: black;
-    border: 2px solid #3fcc59;
-    padding: 10px 25px;
     text-transform: capitalize;
 }
 
@@ -15,8 +15,8 @@
 .dropdown:hover,
 .dropdown:focus {
     border-color: #3fcc59;
-    color: #69db7e;
     box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+    color: #69db7e;
     transform: translateY(-0.25em);
 }
 

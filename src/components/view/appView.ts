@@ -15,26 +15,17 @@ export class AppView {
     }
 
     public drawNews(data: Readonly<ArticlesObject>): void {
-        let values: NewsObject[] = [];
-        if (data.articles) {
-            values = data.articles;
-        }
+        const values: NewsObject[] = data.articles || [];
         this.news.draw(values);
     }
 
     public drawSources(data: Readonly<SourcesData>): void {
-        let values: SourceObject[] = [];
-        if (data.sources) {
-            values = data.sources;
-        }
+        const values: SourceObject[] = data.sources || [];
         this.sources.draw(values);
     }
 
     public drawCategories(data: Readonly<SourcesData>): void {
-        let values: SourceObject[] = [];
-        if (data.sources) {
-            values = data.sources;
-        }
+        const values: SourceObject[] = data.sources || [];
         this.categories.draw(values);
     }
 }
