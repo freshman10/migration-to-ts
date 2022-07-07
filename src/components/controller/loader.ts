@@ -1,4 +1,4 @@
-import { GetRespObject, OptionsObj } from '../../types/types';
+import { GetRespObject, OptionsObj, Status } from '../../types/types';
 
 class Loader {
     private baseLink: string;
@@ -19,7 +19,7 @@ class Loader {
 
     public errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === Status.error_401 || res.status === Status.error_404)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }

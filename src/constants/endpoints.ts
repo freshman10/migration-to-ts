@@ -1,3 +1,4 @@
 export const ENDPOINTS = {
-    endpoint: 'sources',
+    sources: 'sources',
+    everything: 'everything',
 };

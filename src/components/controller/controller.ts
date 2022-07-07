@@ -3,7 +3,12 @@ import { ENDPOINTS } from '../../constants/endpoints';
 
 class AppController extends AppLoader {
     public getSources<Data>(callback: (data: Readonly<Data>) => void): void {
-        super.getResponse(ENDPOINTS, callback);
+        super.getResponse(
+            {
+                endpoint: ENDPOINTS.sources,
+            },
+            callback
+        );
     }
 
     public getNews<Data>(e: PointerEvent, callback: (data: Readonly<Data>) => void): void {
@@ -17,7 +22,7 @@ class AppController extends AppLoader {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResponse(
                         {
-                            endpoint: 'everything',
+                            endpoint: ENDPOINTS.everything,
                             options: {
                                 sources: sourceId,
                             },
