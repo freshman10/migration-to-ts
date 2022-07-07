@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { NewsClass, SourcesClass, ArticlesObject, SourcesData, NewsObject } from '../../types/types';
+import { NewsClass, SourcesClass, ArticlesObject, SourcesData, NewsObject, SourceObject } from '../../types/types';
 import Categories from './categories/categories';
 
 export class AppView {
@@ -15,17 +15,26 @@ export class AppView {
     }
 
     public drawNews(data: Readonly<ArticlesObject>) {
-        const values: NewsObject[] = data?.articles ? data?.articles : [];
+        let values: NewsObject[] = [];
+        if (data.articles) {
+            values = data.articles;
+        }
         this.news.draw(values);
     }
 
     public drawSources(data: Readonly<SourcesData>) {
-        const values = data?.sources ? data?.sources : [];
+        let values: SourceObject[] = [];
+        if (data.sources) {
+            values = data.sources;
+        }
         this.sources.draw(values);
     }
 
     public drawCategories(data: Readonly<SourcesData>) {
-        const values = data?.sources ? data?.sources : [];
+        let values: SourceObject[] = [];
+        if (data.sources) {
+            values = data.sources;
+        }
         this.categories.draw(values);
     }
 }

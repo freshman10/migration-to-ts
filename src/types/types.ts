@@ -40,7 +40,7 @@ export interface SourcesClass {
 
 export interface ArticlesObject {
     status: Status;
-    totalResults: 3503;
+    totalResults: number;
     articles: NewsObject[];
 }
 
