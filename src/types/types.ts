@@ -1,7 +1,5 @@
 type ObjectIdName = Pick<SourceObject, 'id' | 'name'>;
 
-export type UnionHTMLAndNull = HTMLTemplateElement | null;
-
 export interface NewsObject {
     author: string;
     content: string;

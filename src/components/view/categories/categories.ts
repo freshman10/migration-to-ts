@@ -1,13 +1,13 @@
 import './categories.css';
-import { SourceObject, UnionHTMLAndNull } from '../../../types/types';
+import { SourceObject } from '../../../types/types';
 
 class Categories {
     private countries = new Set<string>();
     private categories = new Set<string>();
 
     public draw(data: SourceObject[]): void {
-        const category: UnionHTMLAndNull = document.querySelector('.category');
-        const country: UnionHTMLAndNull = document.querySelector('.country');
+        const category = document.querySelector('.category') as HTMLTemplateElement;
+        const country = document.querySelector('.country') as HTMLTemplateElement;
         data.forEach((item: SourceObject) => {
             this.countries.add(item.country);
             this.categories.add(item.category);

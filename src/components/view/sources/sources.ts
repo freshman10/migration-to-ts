@@ -1,12 +1,12 @@
 import './sources.css';
-import { SourceObject, UnionHTMLAndNull } from '../../../types/types';
+import { SourceObject } from '../../../types/types';
 
 class Sources {
     public draw(data: SourceObject[]): void {
-        const category: HTMLSelectElement | null = document.querySelector('.category');
-        const country: HTMLSelectElement | null = document.querySelector('.country');
-        const fragment: DocumentFragment = document.createDocumentFragment();
-        const sourceItemTemp: UnionHTMLAndNull = document.querySelector('#sourceItemTemp');
+        const category = document.querySelector('.category') as HTMLSelectElement;
+        const country = document.querySelector('.country') as HTMLSelectElement;
+        const fragment = document.createDocumentFragment() as DocumentFragment;
+        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
         if (sourceItemTemp) {
             data.forEach((item: SourceObject) => {
                 if (
@@ -15,12 +15,12 @@ class Sources {
                 ) {
                     const sourceClone = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
 
-                    const itemName: UnionHTMLAndNull = sourceClone.querySelector('.source__item-name');
+                    const itemName = sourceClone.querySelector('.source__item-name') as HTMLTemplateElement;
                     if (itemName) {
                         itemName.textContent = item.name;
                     }
 
-                    const itemElement: UnionHTMLAndNull = sourceClone.querySelector('.source__item');
+                    const itemElement = sourceClone.querySelector('.source__item') as HTMLTemplateElement;
                     if (itemElement) {
                         itemElement.setAttribute('data-source-id', item.id);
                     }
@@ -30,8 +30,8 @@ class Sources {
             });
         }
 
-        const sources: UnionHTMLAndNull = document.querySelector('.sources');
-        const news: UnionHTMLAndNull = document.querySelector('.news');
+        const sources = document.querySelector('.sources') as HTMLTemplateElement;
+        const news = document.querySelector('.news') as HTMLTemplateElement;
         if (sources && news) {
             sources.innerHTML = '';
             news.innerHTML = '';
