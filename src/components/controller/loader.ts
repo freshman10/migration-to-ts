@@ -1,3 +1,4 @@
+import { MINUS_ONE, ZERO } from '../../constants/constants';
 import { GetRespObject, OptionsObj, Status } from '../../types/types';
 
 class Loader {
@@ -35,7 +36,7 @@ class Loader {
             url += `${key}=${urlOptions[key]}&`;
         });
 
-        return url.slice(0, -1);
+        return url.slice(ZERO, MINUS_ONE);
     }
 
     private load<Data>(
